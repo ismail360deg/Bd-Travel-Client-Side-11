@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Student Visa",
+        "img": "https://kit.baliniz.com/adviza/wp-content/uploads/sites/36/2022/08/male-student-teenager-with-usa-flag-inside-college-group-of-students-background.jpg",
+        "description": "Study Abroad.Studying abroad with a partner university; Erasmus+ study abroad; Study Abroad without an agreement; Practical information and personal preparation; Evaluation of study.Saturday, October 15 | 9:00 am to 4:00 pm | Online via Zoom. Each year the AAU Teaching Showcase brings together faculty, academic librarians, graduate students, educational developers, and other professional staff.",
+        "price": "$400"
+    },
+    {
+        "name": "Residence Visa",
+        "img": "https://kit.baliniz.com/adviza/wp-content/uploads/sites/36/2022/08/woman-packing-masks-and-passports.jpg",
+        "description": "A residence permit (less commonly residency permit) is a document or card required in some regions, allowing a foreign national to reside in a country for a fixed or indefinite length of time. These may be permits for temporary residency, or permanent residency. The exact rules vary between regions.",
+        "price": "$900"
+    },
+    {
+        "name": "Business Visa",
+        "img": "https://kit.baliniz.com/adviza/wp-content/uploads/sites/36/2022/08/three-young-business-professionals-standing-together-and-discussing-over-business-report.jpg",
+        "description": "A business visa is a type of travel authorization that allows an individual to visit a foreign nation for the purpose of conducting business. During the visit, they may engage in business activities that do not constitute work or employment.",
+        "price": "$800"
+    },
+    {
+        "name": "Tourist Visa",
+        "img": "https://kit.baliniz.com/adviza/wp-content/uploads/sites/36/2022/08/portrait-of-happy-senior-couple-tourists-using-map-and-smartphone-outdoors-in-town-street.jpg",
+        "description": "Visitor visas are non immigrant visas for persons who want to enter the United States temporarily for business (visa category B-1), for tourism (visa category B-2), or for a combination of both purposes (B-1/B-2).",
+        "price": "$700"
+    },
+    {
+        "name": "Digital Visa",
+        "img": "https://kit.baliniz.com/adviza/wp-content/uploads/sites/36/2022/08/passports-and-tickets-e1661681812713.jpg",
+        "description": "A digital nomad visa is a document or program that gives someone the legal right to work remotely while residing away from their country of permanent residence..",
+        "price": "$600"
+    },
+    {
+        "name": "Conference Visa",
+        "img": "https://kit.baliniz.com/adviza/wp-content/uploads/sites/36/2022/08/happy-student-39-s-life-concept-e1661681818440.jpg",
+        "description": "A conference visa can be issued to a foreigner if he/she wants to attend any International/National conferences, seminars, or Academic events in any country other than his/her own. The sole purpose of this visa is to attain any conference/seminar or workshop/meetings being organized other than in your country.",
+        "price": "$500"
+    }
+]
