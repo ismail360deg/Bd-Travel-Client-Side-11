@@ -4,6 +4,27 @@ import img from '../../assets/login.gif'
 
 const Login = () => {
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        // signIn(email, password)
+        //     .then(result => {
+        //         const user = result.user;
+        //         console.log(user);
+        //         form.reset();
+        //         setError('')
+        //         navigate(from, { replace: true })
+        //     })
+        //     .catch(error => {
+        //         console.error(error)
+        //         setError(error.message)
+        //     })
+    }
+
 
 
     return (
@@ -15,14 +36,14 @@ const Login = () => {
 
                 <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
                     <h1 className="text-2xl font-bold text-center">Login</h1>
-                    <form novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                    <form onSubmit={handleSubmit} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
                             <label for="email" className="block dark:text-gray-400">Email</label>
                             <input type="text" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label for="password" className="block dark:text-gray-400">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                            <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-700 focus:dark:border-violet-400" />
                             <div className="flex justify-end text-xs dark:text-gray-400">
                                 <Link rel="noopener noreferrer" href="#">Forgot Password?</Link>
                             </div>
