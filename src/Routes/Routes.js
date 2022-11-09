@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 // import ErrorPage from "../pages/ErrorPage";
 import Main from "../layout/Main";
 import Blog from "../pages/Blog/Blog";
+import DoubleSection from "../pages/DoubleSection/DoubleSection";
 import Home from "../pages/Home/Home/Home";
 import Services from "../pages/Home/Services/Services";
 import Login from "../pages/Login/Login";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/review',
                 element: <Review></Review>
+            },
+            {
+                path: '/doubleSection',
+                element: <DoubleSection></DoubleSection>
             },
             {
                 path: '/blog',
