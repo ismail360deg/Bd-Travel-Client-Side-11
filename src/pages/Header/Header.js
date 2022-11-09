@@ -1,8 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 z-20'>
             <div className='relative flex items-center justify-between'>
@@ -48,7 +58,7 @@ const Header = () => {
                             Blog
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link
                             to='/login'
                             aria-label='login'
@@ -56,7 +66,58 @@ const Header = () => {
                         >
                             <p> Login</p>
                         </Link>
+                    </li> */}
+
+
+                    <li>
+                        <Link href='#' className='mr-5 hover:text-gray-900'>
+                            {
+                                user?.uid ?
+
+                                    <>
+
+                                        <Link to='/'>
+
+                                            <button onClick={handleLogOut} className='inline-flex items-center bg-gray-300 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0'>
+                                                Logout
+                                                {/* <svg
+                                                    fill='none'
+                                                    stroke='currentColor'
+                                                    strokeLinecap='round'
+                                                    strokeLinejoin='round'
+                                                    strokeWidth='2'
+                                                    className='w-4 h-4 ml-1'
+                                                    viewBox='0 0 24 24'
+                                                >
+                                                    <path d='M5 12h14M12 5l7 7-7 7'></path>
+                                                </svg> */}
+                                            </button></Link>
+
+
+                                        {/* <span>{user?.displayName}</span> */}
+
+
+                                    </>
+                                    :
+                                    <>
+                                        <Link to='/login' className='mr-5 font-semibold hover:text-gray-900'>Login</Link>
+                                    </>
+                            }
+                        </Link>
                     </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </ul>
                 <div className='lg:hidden'>
                     <button

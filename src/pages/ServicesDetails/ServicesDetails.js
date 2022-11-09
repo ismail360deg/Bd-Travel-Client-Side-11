@@ -4,31 +4,29 @@ import { Link, useLoaderData } from 'react-router-dom';
 const ServicesDetails = () => {
     const ServicesDetails = useLoaderData()
     return (
-        <div>
-            <div className='mb-8 mt-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-slate-500'>
+        <div className='mb-8 mt-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-slate-500'>
 
-                <div className=" bg-slate-300 card card-compact w-96 text-gray-700 shadow-xl">
+            <div className=" bg-slate-300 card card-compact w-96 text-gray-700 shadow-xl">
 
-                    {
-                        ServicesDetails.map((ServicesDetails) => (
-                            <Link>
+                {
+                    ServicesDetails.map((ServicesDetails) => (
+                        <Link>
 
-                                <figure><img src={ServicesDetails.img} alt="Shoes" /></figure>
-                                <div className="card-body">
-                                    <p className='text-2xl text-orange-600 font-semibold'>Price: {ServicesDetails.name}</p>
-                                    <p>{ServicesDetails.description}</p>
-                                    <p className='text-2xl text-orange-600 font-semibold'>Price: {ServicesDetails.price}</p>
-                                </div>
-                                <Link to={'/doubleSection'}>
-                                    < button className="btn btn-primary">Add Review</button>
-                                </Link>
+                            <figure><img src={ServicesDetails.img} alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <p className='text-2xl text-orange-600 font-semibold'>Price: {ServicesDetails.name}</p>
+                                <p>{ServicesDetails.description}</p>
+                                <p className='text-2xl text-orange-600 font-semibold'>Price: {ServicesDetails.price}</p>
+                            </div>
+                            <Link to={'/doubleSection'}>
+                                < button className="btn btn-primary">Add Review</button>
                             </Link>
+                        </Link>
 
-                        ))}
+                    ))}
 
-                </div>
             </div>
-        </div >
+        </div>
     );
 };
 
