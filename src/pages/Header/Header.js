@@ -31,7 +31,7 @@ const Header = () => {
                     </span>
                 </Link>
                 <ul className='flex items-center hidden space-x-8 lg:flex'>
-                    <li>
+                    {/* <li>
                         <Link
                             to='/review'
                             aria-label='review'
@@ -39,10 +39,10 @@ const Header = () => {
                         >
                             My Review
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link
-                            to='/services'
+                            to='/servicesDetails'
                             aria-label='services'
                             className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                         >
@@ -76,6 +76,22 @@ const Header = () => {
 
                                     <>
 
+                                        <Link
+                                            to='/review'
+                                            aria-label='review'
+                                            className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                        >
+                                            My Review
+                                        </Link>
+
+                                        <Link
+                                            to='/review'
+                                            aria-label='review'
+                                            className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                        >
+                                            Add Review
+                                        </Link>
+
                                         <Link to='/'>
 
                                             <button onClick={handleLogOut} className='inline-flex items-center bg-gray-300 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0'>
@@ -100,7 +116,12 @@ const Header = () => {
                                     </>
                                     :
                                     <>
+
+
+
+
                                         <Link to='/login' className='mr-5 font-semibold hover:text-gray-900'>Login</Link>
+
                                     </>
                             }
                         </Link>

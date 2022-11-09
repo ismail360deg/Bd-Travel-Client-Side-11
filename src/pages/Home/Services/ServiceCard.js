@@ -10,8 +10,8 @@ const ServiceCard = ({ service }) => {
                 <p className='text-2xl text-orange-600 font-semibold'>Price: {name}</p>
                 <p >
                     {
-                        description.length > 200 ?
-                            <>{description.slice(0, 150) + '...'}  </>
+                        description.length > 100 ?
+                            <>{description.slice(0, 100) + '...'}  </>
                             :
                             description
                     }

@@ -43,7 +43,9 @@ const router = createBrowserRouter([
                 element: <Review></Review>
             },
             {
-                path: '/doubleSection',
+                path: '/doubleSection/:id',
+                loader: async ({ params }) =>
+                    fetch(`http://localhost:5000/services/${params.id}`),
                 element: <DoubleSection></DoubleSection>
             },
             {
