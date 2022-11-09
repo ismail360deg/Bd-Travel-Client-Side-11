@@ -3,8 +3,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Blog from "../pages/Blog/Blog";
 import Home from "../pages/Home/Home/Home";
+import Services from "../pages/Home/Services/Services";
 import Login from "../pages/Login/Login";
 import Review from "../pages/Review/Review";
+import ServicesDetails from "../pages/ServicesDetails/ServicesDetails";
 import SignUp from "../pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
@@ -24,6 +26,16 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>
+            },
+            {
+                path: '/servicesDetails',
+                loader: async () =>
+                    fetch("http://localhost:5000/services"),
+                element: <ServicesDetails></ServicesDetails>
             },
             {
                 path: '/review',
