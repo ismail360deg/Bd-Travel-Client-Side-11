@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.gif'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import PageTitle from '../../contexts/PageTitle';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -13,7 +15,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || '/review';
+    const from = location.state?.from?.pathname || '/servicesDetails';
 
     const { providerLogin } = useContext(AuthContext)
 
@@ -24,6 +26,7 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                toast.success('Login successful!', { autoClose: 500 })
                 console.log(user);
                 if (user) {
                     navigate(from, { replace: true })
@@ -47,6 +50,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('')
+                toast.success('Login successful!', { autoClose: 500 })
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -106,6 +110,11 @@ const Login = () => {
 
                 </div>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+            />
+            <ToastContainer />
         </>
     );
 };

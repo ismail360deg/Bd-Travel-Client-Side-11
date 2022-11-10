@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import { HelmetProvider } from 'react-helmet-async';
+import { ToastContainer } from 'react-toastify';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
+
     <HelmetProvider>
       <AuthProvider>
         <App />
+        <ToastContainer position='top-center' />
       </AuthProvider>
     </HelmetProvider>
   </>

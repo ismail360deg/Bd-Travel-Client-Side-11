@@ -22,7 +22,7 @@ const ServicesDetails = () => {
 
                                 <figure><img src={ServicesDetails.img} alt="Shoes" /></figure>
                                 <div className="card-body">
-                                    <p className='text-2xl text-orange-600 font-semibold'>Price: {ServicesDetails.name}</p>
+                                    <p className='text-2xl text-orange-600 font-semibold'> {ServicesDetails.name}</p>
                                     <p>{ServicesDetails.description}</p>
                                     <p className='text-2xl text-orange-600 font-semibold'>Price: {ServicesDetails.price}</p>
                                 </div>
@@ -34,7 +34,6 @@ const ServicesDetails = () => {
                             </Link>
 
                         ))}
-
 
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import Review from '../Review/Review';
 
 const DoubleSection = () => {
     const { _id, name, img, price, description } = useLoaderData();
@@ -18,7 +19,7 @@ const DoubleSection = () => {
             services: name,
             price,
             email,
-            message
+            message: message
         }
 
         // if (message.length > 50) {
@@ -65,11 +66,11 @@ const DoubleSection = () => {
                         <>
                             <form onSubmit={handleReview} className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
                                 <label className="block">
-                                    <span className="mb-1">Full name</span>
+                                    <span className="mb-1">Product Name</span>
                                     <input
                                         name='fullName'
                                         type="text"
-                                        placeholder="Your Name"
+                                        placeholder="Product Name"
                                         className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800" />
                                 </label>
 
@@ -105,10 +106,8 @@ const DoubleSection = () => {
                         </>
                 }
 
-
-
-
             </div>
+            <Review></Review>
         </section>
     );
 };

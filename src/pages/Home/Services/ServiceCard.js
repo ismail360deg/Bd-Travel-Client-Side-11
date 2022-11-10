@@ -7,7 +7,7 @@ const ServiceCard = ({ service }) => {
         <div className=" bg-slate-300 card card-compact w-96 text-gray-700 shadow-xl">
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
-                <p className='text-2xl text-orange-600 font-semibold'>Price: {name}</p>
+                <p className='text-2xl text-orange-600 font-semibold'> {name}</p>
                 <p >
                     {
                         description.length > 100 ?
