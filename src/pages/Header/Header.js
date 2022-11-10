@@ -106,7 +106,7 @@ const Header = () => {
                     <button
                         aria-label='Open Menu'
                         title='Open Menu'
-                        className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50'
+                        className='p-2  -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50'
                         onClick={() => setIsMenuOpen(true)}
                     >
                         <svg className='w-5 text-gray-600' viewBox='0 0 24 24'>
@@ -130,26 +130,19 @@ const Header = () => {
                                 <div className='flex items-center justify-between mb-4'>
                                     <div>
                                         <Link
-                                            to='/'
+
                                             aria-label='Company'
                                             title='Company'
                                             className='inline-flex items-center'
                                         >
 
                                             <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                                                Smart Home
+
+                                                <button
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                >X</button>
                                             </span>
                                         </Link>
-                                    </div>
-                                    <div>
-                                        <button
-                                            aria-label='Close Menu'
-                                            title='Close Menu'
-                                            className='p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline'
-                                            onClick={() => setIsMenuOpen(false)}
-                                        >
-
-                                        </button>
                                     </div>
                                 </div>
                                 <nav>
