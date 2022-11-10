@@ -31,15 +31,6 @@ const Header = () => {
                     </span>
                 </Link>
                 <ul className='flex items-center hidden space-x-8 lg:flex'>
-                    {/* <li>
-                        <Link
-                            to='/review'
-                            aria-label='review'
-                            className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                        >
-                            My Review
-                        </Link>
-                    </li> */}
                     <li>
                         <Link
                             to='/servicesDetails'
@@ -58,15 +49,6 @@ const Header = () => {
                             Blog
                         </Link>
                     </li>
-                    {/* <li>
-                        <Link
-                            to='/login'
-                            aria-label='login'
-                            className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                        >
-                            <p> Login</p>
-                        </Link>
-                    </li> */}
 
 
                     <li>
@@ -85,28 +67,17 @@ const Header = () => {
                                         </Link>
 
                                         <Link
-                                            to='/review'
+                                            to='/addService'
                                             aria-label='review'
                                             className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                         >
-                                            Add Review
+                                            Add Service
                                         </Link>
 
                                         <Link to='/'>
 
                                             <button onClick={handleLogOut} className='inline-flex items-center bg-gray-300 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0'>
                                                 Logout
-                                                {/* <svg
-                                                    fill='none'
-                                                    stroke='currentColor'
-                                                    strokeLinecap='round'
-                                                    strokeLinejoin='round'
-                                                    strokeWidth='2'
-                                                    className='w-4 h-4 ml-1'
-                                                    viewBox='0 0 24 24'
-                                                >
-                                                    <path d='M5 12h14M12 5l7 7-7 7'></path>
-                                                </svg> */}
                                             </button></Link>
 
 
@@ -126,15 +97,6 @@ const Header = () => {
                             }
                         </Link>
                     </li>
-
-
-
-
-
-
-
-
-
 
 
 

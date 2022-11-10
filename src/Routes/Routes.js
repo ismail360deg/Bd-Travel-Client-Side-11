@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 // import ErrorPage from "../pages/ErrorPage";
 import Main from "../layout/Main";
+import AddService from "../pages/AddService/AddService";
 import Blog from "../pages/Blog/Blog";
 import DoubleSection from "../pages/DoubleSection/DoubleSection";
 import Home from "../pages/Home/Home/Home";
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/addService',
+                element: <AddService></AddService>
             }
         ]
     }
