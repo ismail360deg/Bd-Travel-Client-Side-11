@@ -33,6 +33,15 @@ const Header = () => {
                 <ul className='flex items-center hidden space-x-8 lg:flex'>
                     <li>
                         <Link
+                            to='/'
+                            aria-label='services'
+                            className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
                             to='/servicesDetails'
                             aria-label='services'
                             className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -69,7 +78,7 @@ const Header = () => {
                                         <Link
                                             to='/addService'
                                             aria-label='review'
-                                            className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                            className='ml-4 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                         >
                                             Add Service
                                         </Link>
@@ -125,8 +134,10 @@ const Header = () => {
                         </svg>
                     </button>
                     {isMenuOpen && (
-                        <div className='absolute top-0 left-0 w-full'>
-                            <div className='p-5 bg-white border rounded shadow-sm'>
+                        <div className='absolute z-40 top-0 left-0 w-full'>
+
+
+                            <div className='p-5  bg-white border rounded shadow-sm'>
                                 <div className='flex items-center justify-between mb-4'>
                                     <div>
                                         <Link
@@ -147,11 +158,21 @@ const Header = () => {
                                 </div>
                                 <nav>
                                     <ul className='space-y-4'>
+                                        <li>
+                                            <Link
+                                                to='/'
+                                                aria-label='Services'
+                                                title='Home'
+                                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                            >
+                                                Home
+                                            </Link>
+                                        </li>
 
                                         <li>
                                             <Link
                                                 to='/servicesDetails'
-                                                aria-label='Home'
+                                                aria-label='Services'
                                                 title='Home'
                                                 className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                             >
@@ -170,13 +191,49 @@ const Header = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link
-                                                to='/blog'
-                                                aria-label='blog'
-                                                title='Blog'
-                                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                                            >
-                                                <p> Blog</p>
+                                            <Link href='#' className='mr-5 hover:text-gray-900'>
+                                                {
+                                                    user?.uid ?
+
+                                                        <>
+
+                                                            <Link
+                                                                to='/review'
+                                                                aria-label='review'
+                                                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                                            >
+                                                                My Review
+                                                            </Link>
+
+                                                            <Link
+                                                                to='/addService'
+                                                                aria-label='review'
+                                                                className='ml-4 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                                            >
+                                                                Add Service
+                                                            </Link>
+
+                                                            <Link to='/'>
+
+                                                                <button onClick={handleLogOut} className='inline-flex items-center bg-gray-300 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0'>
+                                                                    Logout
+                                                                </button></Link>
+
+
+                                                            {/* <span>{user?.displayName}</span> */}
+
+
+                                                        </>
+                                                        :
+                                                        <>
+
+
+
+
+                                                            <Link to='/login' className='mr-5 font-semibold hover:text-gray-900'>Login</Link>
+
+                                                        </>
+                                                }
                                             </Link>
                                         </li>
                                     </ul>

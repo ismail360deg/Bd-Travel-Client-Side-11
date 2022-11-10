@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css'
 
 const ReviewRow = ({ review, handleDelete }) => {
     const { _id, services, price, email, serviceId } = review;
     const [reviewService, setReviewService] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://bd-travel-server-ismail360deg.vercel.app/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setReviewService(data));
     }, [serviceId])
@@ -18,7 +20,11 @@ const ReviewRow = ({ review, handleDelete }) => {
 
             {
                 reviewService?.img &&
-                <figure><img src={reviewService.img} alt="Shoes" /></figure>
+                <PhotoProvider>
+                    <PhotoView src={reviewService.img}>
+                        <figure><img src={reviewService.img} alt="Shoes" /></figure>
+                    </PhotoView>
+                </PhotoProvider>
             }
 
             <div className="card-body">

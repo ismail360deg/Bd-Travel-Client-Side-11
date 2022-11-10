@@ -11,6 +11,7 @@ import Login from "../pages/Login/Login";
 import Review from "../pages/Review/Review";
 import ServicesDetails from "../pages/ServicesDetails/ServicesDetails";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -37,17 +38,17 @@ const router = createBrowserRouter([
             {
                 path: '/servicesDetails',
                 loader: async () =>
-                    fetch("http://localhost:5000/services"),
+                    fetch("https://bd-travel-server-ismail360deg.vercel.app/services"),
                 element: <ServicesDetails></ServicesDetails>
             },
             {
                 path: '/review',
-                element: <Review></Review>
+                element: <PrivateRoute><Review></Review></PrivateRoute>
             },
             {
                 path: '/doubleSection/:id',
                 loader: async ({ params }) =>
-                    fetch(`http://localhost:5000/services/${params.id}`),
+                    fetch(`https://bd-travel-server-ismail360deg.vercel.app/services/${params.id}`),
                 element: <DoubleSection></DoubleSection>
             },
             {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addService',
-                element: <AddService></AddService>
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             }
         ]
     }

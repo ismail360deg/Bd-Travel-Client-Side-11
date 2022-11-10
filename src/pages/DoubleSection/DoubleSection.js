@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Review from '../Review/Review';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css'
 
 const DoubleSection = () => {
     const { _id, name, img, price, description } = useLoaderData();
@@ -28,7 +30,7 @@ const DoubleSection = () => {
         // else {
 
         // }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://bd-travel-server-ismail360deg.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +47,11 @@ const DoubleSection = () => {
         <section className=" mb-36 py-6 bg-gray-500 text-gray-50">
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                 <div className="py-6 md:py-0 md:px-6">
-                    <figure><img src={img} alt="Shoes" /></figure>
+                    <PhotoProvider>
+                        <PhotoView src={img}>
+                            <figure><img src={img} alt="Shoes" /></figure>
+                        </PhotoView>
+                    </PhotoProvider>
                     <h1 className="text-2xl text-gray-900 font-bold">{name}</h1>
                     <div className="space-y-4">
                         <p className="flex items-center">
@@ -66,11 +72,11 @@ const DoubleSection = () => {
                         <>
                             <form onSubmit={handleReview} className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
                                 <label className="block">
-                                    <span className="mb-1">Product Name</span>
+                                    <span className="mb-1">Visa Name</span>
                                     <input
                                         name='fullName'
                                         type="text"
-                                        placeholder="Product Name"
+                                        placeholder="Visa Name"
                                         className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800" />
                                 </label>
 

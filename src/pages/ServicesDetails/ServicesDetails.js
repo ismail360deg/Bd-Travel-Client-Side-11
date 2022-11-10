@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import PageTitle from '../../contexts/PageTitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServicesDetails = () => {
     const ServicesDetails = useLoaderData()
@@ -20,7 +22,13 @@ const ServicesDetails = () => {
                             // to={`/servicesDetails/${ServicesDetails._id}`}
                             >
 
-                                <figure><img src={ServicesDetails.img} alt="Shoes" /></figure>
+                                <PhotoProvider>
+                                    <PhotoView src={ServicesDetails.img}>
+                                        <figure><img src={ServicesDetails.img} alt="Shoes" /></figure>
+                                    </PhotoView>
+                                </PhotoProvider>
+
+
                                 <div className="card-body">
                                     <p className='text-2xl text-orange-600 font-semibold'> {ServicesDetails.name}</p>
                                     <p>{ServicesDetails.description}</p>
